@@ -1,29 +1,31 @@
-local cmp_kinds = {
-  Text = ' ',
-  Method = ' ',
-  Function = ' ',
-  Constructor = ' ',
-  Field = ' ',
-  Variable = ' ',
-  Class = ' ',
-  Interface = ' ',
-  Module = ' ',
-  Property = ' ',
-  Unit = ' ',
-  Value = ' ',
-  Enum = ' ',
-  Keyword = ' ',
-  Snippet = ' ',
-  Color = ' ',
-  File = ' ',
-  Reference = ' ',
-  Folder = ' ',
-  EnumMember = ' ',
-  Constant = ' ',
-  Struct = ' ',
-  Event = ' ',
-  Operator = ' ',
-  TypeParameter = ' ',
+local kind_icons = {
+  vscode_style = {
+    Text = '',
+    Method = '',
+    Function = '',
+    Constructor = '',
+    Field = '',
+    Variable = '',
+    Class = '',
+    Interface = '',
+    Module = '',
+    Property = '',
+    Unit = '',
+    Value = '',
+    Enum = '',
+    Keyword = '',
+    Snippet = '',
+    Color = '',
+    File = '',
+    Reference = '',
+    Folder = '',
+    EnumMember = '',
+    Constant = '',
+    Struct = '',
+    Event = '',
+    Operator = '',
+    TypeParameter = '',
+  },
 }
 
 return {
@@ -50,6 +52,7 @@ return {
     'saadparwaiz1/cmp_luasnip',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
+    'hrsh7th/cmp-buffer',
   },
   config = function()
     local cmp = require 'cmp'
@@ -66,10 +69,10 @@ return {
         fields = { 'kind', 'abbr', 'menu' },
         format = function(_, vim_item)
           vim_item.menu = nil
-          vim_item.kind = cmp_kinds[vim_item.kind]
+          vim_item.kind = kind_icons.vscode_style[vim_item.kind]
           return vim_item
         end,
-        expandable_indicator = true,
+        expandable_indicator = false,
       },
       completion = { completeopt = 'menu,menuone,noinsert' },
       mapping = {
@@ -111,6 +114,7 @@ return {
       sources = {
         { name = 'lazydev', group_index = 0 },
         { name = 'nvim_lsp' },
+        { name = 'buffer' },
         { name = 'luasnip' },
         { name = 'path' },
       },
