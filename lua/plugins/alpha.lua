@@ -73,8 +73,9 @@ local buttons = {
     button('e', '  New file', '<cmd>ene <CR>'),
     button('SPC s f', '  Find file'),
     button('SPC s .', '  Recently'),
-    button('SPC s g', '󰈬  Find word'),
-    button('l', '󰒲  Lazy', '<cmd>Lazy<CR>'),
+    button('c', '  Config', '<cmd>cd ~/.config/nvim/<CR><cmd>Telescope find_files<CR>'),
+    button('m', '  Mason', '<cmd>Mason<CR>'),
+    button('l', '  Lazy', '<cmd>Lazy<CR>'),
     button('q', '󰈆  Exit', '<cmd>qa!<CR>'),
   },
   opts = {
