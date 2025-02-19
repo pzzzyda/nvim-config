@@ -5,6 +5,9 @@ return {
     { '<leader>e', ':NvimTreeToggle<CR>', desc = 'Toggle nvim-tree', silent = true },
   },
   opts = {
+    filters = {
+      dotfiles = true,
+    },
     renderer = {
       icons = {
         padding = ' ',
