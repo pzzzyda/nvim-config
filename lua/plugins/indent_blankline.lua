@@ -21,6 +21,7 @@ return {
         'NvimTree',
         'notify',
         'toggleterm',
+        'neo-tree'
       },
     },
   },
